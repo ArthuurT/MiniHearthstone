@@ -1,0 +1,9 @@
+
+<input 
+    type="text" 
+    class="form-control" 
+    id="choosenName" 
+    [ngModel]="name" 
+    placeholder="Entrez votre nom" 
+    (input)="name = $event.target.value">
+<a>{{name}}</a>

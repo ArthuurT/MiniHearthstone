@@ -1,0 +1,6 @@
+<div>
+  <a *ngFor = "let heros of heros_list" (click)="selected(heros)">
+    <img src="{{heros[0]}}" id="{{heros[1]}}">
+  </a>
+</div>
+
