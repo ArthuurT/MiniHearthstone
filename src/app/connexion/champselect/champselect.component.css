@@ -1,5 +1,20 @@
 img{
-    margin-right: 50px;
-    margin-left: 50px;
+    width: 330px;
+    margin-right: 20px;
+    margin-left: 20px;
     margin-top: 25px;
+    box-shadow: 0px 0px 45px 4px rgba(119, 119, 119, 0.651);
+    -moz-box-shadow: 0px 0px 45px 4px rgba(119, 119, 119, 0.658);
+    -webkit-box-shadow: 0px 0px 45px 4px rgba(17, 17, 17, 0.842);    
+    border-top-right-radius: 70px;
+    border-top-left-radius: 70px;
+
 }
+
+img:hover {
+
+    -moz-box-shadow: 0px 1px 2px #444;
+    -webkit-box-shadow: 0px 1px 2px #444;
+    box-shadow: 0px 1px 2px #444;
+}
+
