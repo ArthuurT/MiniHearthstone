@@ -9,7 +9,6 @@ import { RedirectComponent } from './redirect/redirect.component';
 import { InputComponent } from './connexion/input/input.component';
 import { ChampselectComponent } from './connexion/champselect/champselect.component';
 import { FormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     AppComponent,

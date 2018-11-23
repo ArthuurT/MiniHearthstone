@@ -5,6 +5,6 @@
   <app-input></app-input>
   <h3> Choix du héros </h3>
   <app-champselect></app-champselect>
-  <button [disabled]="true" type="button" class="btn btn-dark" id="btnjouer">Jouer !</button>
+  <a routerLink="/loading"><button [disabled]="clickable()" type="button" class="btn btn-dark" id="btnjouer">Jouer !</button></a>
 </div>
 </body>

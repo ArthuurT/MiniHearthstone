@@ -1,3 +1,29 @@
-<p>
-  loading-page works!
-</p>
+<body>
+  <div class="container">
+    <img id="logo" src="../../../assets/img/Logo-SlightStone.png">
+    <h1> SlightStone</h1>
+    <p>{{choosenName}}</p>
+    <img src="{{imgPlayer}}">
+    <img src="../../assets/img/vs.jpg">
+    <p>Recherche d'un advsersaire</p>
+
+    <div *ngIf="boolLoading" class="container">
+      <div class="row">
+        <div id="loader">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="lading"></div>
+        </div>
+      </div>
+    </div>
+
+    <p [hidden]="boolLoading" >Votre partie va bientôt commencer...</p>
+
+  </div>
+</body>
