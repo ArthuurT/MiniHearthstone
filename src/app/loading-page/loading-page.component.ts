@@ -9,4 +9,8 @@ export class LoadingPageComponent{
   public choosenName = "Hug";
   public boolLoading = true;
 
+  setLoading(b){
+    this.boolLoading = b;
+  }
+
 }
