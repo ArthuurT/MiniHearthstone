@@ -10,9 +10,9 @@ export class ChampselectComponent{
   public heros_selected = null;
 
   constructor(){
-    this.heros_list.push(["../../../assets/img/heros_ex.png",1]);
-    this.heros_list.push(["../../../assets/img/heros_ex.png",2]);
-    this.heros_list.push(["../../../assets/img/heros_ex.png",3]);
+    this.heros_list.push(["../../../assets/img/heros1_ex.png",1]);
+    this.heros_list.push(["../../../assets/img/heros2_ex.png",2]);
+    this.heros_list.push(["../../../assets/img/heros3_ex.png",3]);
   }
 
   selected(heros){
