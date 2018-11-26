@@ -10,23 +10,29 @@ div{
 
 
 #btnjouer{
-    margin-top: 3rem;
-    margin-bottom: 5rem;
-    width: 10rem;
-    height: 3rem;
-    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    width: 9rem;
+    height: 2.6rem;
+    font-size: 1.2rem;
 }
 
 #logo{
-margin-top: 2rem;
-width: 10rem;
+margin-top: 1rem;
+width: 7rem;
 border-radius: 10px;
 
 }
 
 h1{
     font-family: test;
-    font-size: 7rem;
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3{
+    font-family: test;
+    font-size: 3rem;
 }
 
 
