@@ -1,0 +1,46 @@
+#profile{
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 50%;
+    width:15%;
+}
+
+#opponent{
+    position: absolute;
+    right:0px;
+    bottom:0px;
+    height: 50%;
+    width:15%;
+}
+
+#deck{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 15%;
+    height: 50%;
+}
+
+#stats{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width:15%;
+    height:50%;
+}
+
+#hand-opponent{
+    position:absolute;
+    width: 70%;
+    margin-left: 15%;
+    height:50%;
+}
+
+#hand-player{
+    position: absolute;
+    width: 70%;
+    margin-left: 15%;
+    bottom:0px;
+    height: 25%;
+}

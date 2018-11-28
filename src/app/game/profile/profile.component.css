@@ -1,0 +1,27 @@
+#id_img{
+    width: 9rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p{
+    text-align: center;
+}
+
+#profile_player{
+    border:solid black;
+    height:100%;
+}
+
+#shield{
+    margin-left: 2rem;
+}
+
+#life{
+    margin-left: 2rem;
+}
+
+#mana{
+    margin-left: 4rem;
+}

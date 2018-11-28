@@ -7,11 +7,11 @@ import { GameComponent } from './game/game.component';
 
 
 const routes: Routes = [
-  { path: 'app', component: AppComponent },
   { path: 'loading', component: LoadingPageComponent },
   { path: '', redirectTo: 'connexion', pathMatch: 'full'},
   { path: 'connexion', component: ConnexionComponent},
-  { path: 'game', component: GameComponent}
+  { path: 'game', component: GameComponent},
+  { path: '**', redirectTo: 'connexion'} 
 ];
 
 @NgModule({
