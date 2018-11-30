@@ -11,9 +11,9 @@ export class ChampselectComponent{
   public herosName;
 
   constructor(){
-    this.heros_list.push(["../../../assets/img/heros1_ex.png",1,'Mage']);
-    this.heros_list.push(["../../../assets/img/heros2_ex.png",2,'Paladin']);
-    this.heros_list.push(["../../../assets/img/heros3_ex.png",3,'Mage']);
+    this.heros_list.push(["../../../assets/img/Mage.png",1,'Mage']);
+    this.heros_list.push(["../../../assets/img/Paladin.png",2,'Paladin']);
+    this.heros_list.push(["../../../assets/img/Guerrier.png",3,'Mage']);
   }
 
   selected(heros){

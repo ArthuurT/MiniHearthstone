@@ -1,0 +1,70 @@
+{
+    "joueurCourant": "Arthur",
+    "joueur": {
+        "pseudo": "Arthur",
+        "heros": {
+            "type": "Guerrier",
+            "image": "Guerrier.png",
+            "pointsVie": 30,
+            "pointsMana": 4,
+            "pointsArmure": 0
+        },
+        "etatMain": [
+            {
+                "idCarte": 2,
+                "etat": "New - Used",
+                "nom": "Sanglier brocheroc", 
+                "description": "...", 
+                "image": "http://www.slightstone.com/images/sanglierBrocheroc.png",
+                "mana": 1, 
+                "dégats": 1,
+                "vie": 1
+            },
+            {
+                "idCarte": 3, 
+                "etat": "New - Used",
+                "nom": "Yéti Noroit", 
+                "description": "...", 
+                "image": "http://www.slightstone.com/images/yetiNoroit.png",
+                "mana": 4, 
+                "dégats": 4,
+                "vie": 5
+            }
+        ],
+        "etatBoard": [
+            {
+                "idCarte": 1, 
+                "etat": "New - Updated - Dead",
+                "nom": "Soldat du comté-de-l'or", 
+                "description": "...", 
+                "image": "http://www.slightstone.com/images/yetiNoroit.png",
+                "mana": 1, 
+                "dégats": 1,
+                "vie": 2
+            }
+        ]
+    },
+    "adversaire": {
+        "pseudo": "Charlotte",
+        "heros": {
+            "type": "Paladin",
+            "image": "Paladin.png",
+            "pointsVie": 30,
+            "pointsMana": 6,
+            "pointsArmure": 1
+        },
+        "nbCartesMain": 4,
+        "etatBoard": [
+            {
+                "idCarte": 56, 
+                "etat": "New - Updated - Dead",
+                "nom": "Chevaucheur de loup", 
+                "description": "...", 
+                "image": "http://www.slightstone.com/images/chevaucheurDeLoup.png",
+                "mana": 3, 
+                "dégats": 3,
+                "vie": 1
+            }
+        ]
+    }
+}

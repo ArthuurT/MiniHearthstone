@@ -14,6 +14,8 @@ import { DeckComponent } from './game/deck/deck.component';
 import { HandPlayerComponent } from './game/hand-player/hand-player.component';
 import { HandOpponentComponent } from './game/hand-opponent/hand-opponent.component';
 import { ProfileComponent } from './game/profile/profile.component';
+import { WebsocketService } from './websocket.service';
+import { ConnexionService } from './connexion.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,7 @@ import { ProfileComponent } from './game/profile/profile.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [WebsocketService,ConnexionService],
   bootstrap: [RedirectComponent]
 })
 export class AppModule { }
