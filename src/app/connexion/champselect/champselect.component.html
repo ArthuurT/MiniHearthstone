@@ -1,7 +1,7 @@
-
-<div>
+<div id="choixHeros"> 
   <a *ngFor = "let heros of heros_list" (click)="selected(heros)">
     <img src="{{heros[0]}}" id="{{heros[1]}}">
+    <figcaption id="fig">{{heros[3]}}</figcaption>
   </a>
 </div>
 

@@ -1,28 +1,14 @@
+
 <body>
-  <div class="container">
     <img id="logo" src="../../../assets/img/Logo-SlightStone.png">
+  <div class="container">
     <h1> SlightStone</h1>
+    <p>Recherche d'un advsersaire</p>
     <p>{{choosenName}}</p>
     <img src="{{imgPlayer}}">
-    <img src="../../assets/img/vs.jpg">
-    <p>Recherche d'un advsersaire</p>
+    <h1> VS </h1>
 
-    <div *ngIf="boolLoading" class="container">
-      <div class="row">
-        <div id="loader">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="lading"></div>
-        </div>
-      </div>
-    </div>
-
+    <div class="lds-ripple"><div></div><div></div></div>
     <p [hidden]="boolLoading" >Votre partie va bientôt commencer...</p>
 
   </div>

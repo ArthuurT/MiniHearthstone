@@ -2,5 +2,11 @@
     margin-bottom: 1rem;
     text-align: center;
     font-size: 1rem;
+    position:absolute;
+    width: 70%;
+    top: 20%;
+    box-shadow: 0px 0px 25px 2px rgba(119, 119, 119, 0.651);
+    -moz-box-shadow: 0px 0px 25px 2px rgba(119, 119, 119, 0.658);
+    -webkit-box-shadow: 0px 0px 25px 2px rgba(49, 48, 48, 0.623);    
 }
 
