@@ -12,6 +12,7 @@ p{
 #profile_player{
     border:solid black;
     height:100%;
+    width: 100%;
 }
 
 #shield{

@@ -19,10 +19,7 @@ export class ConnexionService {
       .connect(CHAT_URL)
       .pipe(map((response: MessageEvent): Message => {
 				let data = JSON.parse(response.data);
-				return {
-          playerName : data.playerName,
-          herosName: data.herosName
-				}
+				return data;
 			}));
 	}
 }
