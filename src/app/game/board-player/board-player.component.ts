@@ -24,9 +24,8 @@ export class BoardPlayerComponent{
 
     if(!(event.previousContainer === event.container) && this.manaSuffisant(carte)){
       this.array.push(carte);
-      event.previousContainer.data.splice(
-        event.previousContainer.data.indexOf(carte),1)
-      this.appliquerMana(carte)
+      event.previousContainer.data.splice(event.previousContainer.data.indexOf(carte),1);
+      this.appliquerMana(carte);
     }
   }
 
@@ -35,6 +34,6 @@ export class BoardPlayerComponent{
   }
 
   manaSuffisant(carte:Carte){
-    return carte.joueur.mana - carte.coutMana >= 0
+    return carte.joueur.mana - carte.coutMana >= 0;
   }
 }
