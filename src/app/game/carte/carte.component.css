@@ -1,0 +1,51 @@
+
+.carte{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#firstline{
+    font-size: 15px;
+    text-align: center;
+}
+
+#mana{
+    margin-right: 50%;
+    color: blue;
+}
+
+#name{
+    font-size: 65%;
+    font-weight: bold;
+    overflow-x: hidden;
+}
+
+#image{
+    height:50%;
+    white-space: normal;
+    overflow-y:scroll;
+    font-size: 10px;
+    margin-top: 5%;
+    font-style: italic;
+}
+
+#button{
+    margin-top: 2%;
+}
+
+#lastline{
+    font-size: 15px;
+    margin-top: 2%;
+}
+
+#vie{
+    margin-right: 65%;
+    color: red;
+}
+
+#degats{
+    color: grey;
+}
+
+

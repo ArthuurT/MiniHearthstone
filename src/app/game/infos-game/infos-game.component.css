@@ -2,4 +2,14 @@
     border:solid black;
     height:100%;
     width: 100%;
+    text-align: center;
+}
+
+#title{
+    margin-top: 2%;
+    font-size: 100%;
+}
+
+p{
+    font-size: 150%;
 }

@@ -11,15 +11,9 @@ export class ChampselectComponent{
   public herosName;
 
   constructor(){
-<<<<<<< HEAD
-    this.heros_list.push(["../../../assets/img/heros1_ex.png","hero1",'Mage',"Le Mage : Son action spéciale est la Boule de feu, infligeant un point de dégat à l'adversaire"]);
-    this.heros_list.push(["../../../assets/img/heros2_ex.png","hero2",'Paladin',"Le Paladin : Son action spéciale est le Renfort, en invoquant un serviteur"]);
-    this.heros_list.push(["../../../assets/img/heros3_ex.png","hero3",'Mage',"Le Guerrier : Son action spéciale est l'armure, lui conférant 2 points d'armure "]);
-=======
-    this.heros_list.push(["../../../assets/img/Mage.png",1,'Mage']);
-    this.heros_list.push(["../../../assets/img/Paladin.png",2,'Paladin']);
-    this.heros_list.push(["../../../assets/img/Guerrier.png",3,'Mage']);
->>>>>>> 0a0e73d18af94093386ea6c9e0d4c76321d8f76d
+    this.heros_list.push(["../../../assets/img/Mage.png","hero1",'Mage',"Le Mage : Son action spéciale est la Boule de feu, infligeant un point de dégat à l'adversaire"]);
+    this.heros_list.push(["../../../assets/img/Guerrier.png","hero2",'Paladin',"Le Paladin : Son action spéciale est le Renfort, en invoquant un serviteur"]);
+    this.heros_list.push(["../../../assets/img/Paladin.png","hero3",'Mage',"Le Guerrier : Son action spéciale est l'armure, lui conférant 2 points d'armure "]);
   }
 
   selected(heros){

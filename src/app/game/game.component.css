@@ -44,3 +44,19 @@
     bottom:0px;
     height: 25%;
 }
+
+#board-opponent{
+    position: absolute;
+    top:25%;
+    height: 25%;
+    width: 70%;
+    left: 15%;
+}
+
+#board-player{
+    position: absolute;
+    top:50%;
+    height: 25%;
+    width: 70%;
+    left: 15%;
+}

@@ -4,43 +4,50 @@
         "pseudo": "Arthur",
         "heros": {
             "type": "Guerrier",
-            "image": "Guerrier.png",
+            "image": "http://www.slightstone.com/images/guerrier.png",
             "pointsVie": 30,
             "pointsMana": 4,
             "pointsArmure": 0
         },
-        "etatMain": [
-            {
-                "idCarte": 2,
-                "etat": "New - Used",
-                "nom": "Sanglier brocheroc", 
-                "description": "...", 
-                "image": "http://www.slightstone.com/images/sanglierBrocheroc.png",
-                "mana": 1, 
-                "dégats": 1,
-                "vie": 1
-            },
-            {
-                "idCarte": 3, 
-                "etat": "New - Used",
-                "nom": "Yéti Noroit", 
-                "description": "...", 
-                "image": "http://www.slightstone.com/images/yetiNoroit.png",
-                "mana": 4, 
-                "dégats": 4,
-                "vie": 5
-            }
-        ],
+        "etatMain": {
+            "serviteurs": [
+                {
+                    "idCarte": 2,
+                    "etat": "New - Used",
+                    "nom": "Sanglier brocheroc", 
+                    "description": "Description du sanglier", 
+                    "image": "sanglierBrocheroc.svg",
+                    "mana": 1, 
+                    "dégats": 1,
+                    "vie": 1
+                },
+                {
+                    "idCarte": 3, 
+                    "etat": "New - Used",
+                    "nom": "Yéti Noroit", 
+                    "description": "Description du yéti", 
+                    "image": "yetiNoroit.svg",
+                    "mana": 4, 
+                    "dégats": 4,
+                    "vie": 5
+                }
+            ],
+            "sorts": []
+        },
         "etatBoard": [
             {
                 "idCarte": 1, 
                 "etat": "New - Updated - Dead",
                 "nom": "Soldat du comté-de-l'or", 
-                "description": "...", 
-                "image": "http://www.slightstone.com/images/yetiNoroit.png",
+                "description": "Description du soldat", 
+                "image": "soldat.svg",
                 "mana": 1, 
                 "dégats": 1,
-                "vie": 2
+                "vie": 2,
+                "jouable": false,
+                "effetLeader": false,
+                "effetProvocation": false,
+                "effetVolDeVie": false
             }
         ]
     },
@@ -48,7 +55,7 @@
         "pseudo": "Charlotte",
         "heros": {
             "type": "Paladin",
-            "image": "Paladin.png",
+            "image": "http://www.slightstone.com/images/paladin.png",
             "pointsVie": 30,
             "pointsMana": 6,
             "pointsArmure": 1
@@ -59,11 +66,15 @@
                 "idCarte": 56, 
                 "etat": "New - Updated - Dead",
                 "nom": "Chevaucheur de loup", 
-                "description": "...", 
-                "image": "http://www.slightstone.com/images/chevaucheurDeLoup.png",
+                "description": "Description du loup", 
+                "image": "wolf.svg",
                 "mana": 3, 
                 "dégats": 3,
-                "vie": 1
+                "vie": 1,
+                "jouable": false,
+                "effetLeader": false,
+                "effetProvocation": false,
+                "effetVolDeVie": false
             }
         ]
     }

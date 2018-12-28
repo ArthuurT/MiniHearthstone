@@ -33,7 +33,7 @@ export class ConnexionComponent{
       herosName: this.selectDetails.herosName
     }
 
-		console.log('new message from client to websocket: ' + message);
+		console.log('new message from client to websocket: ' + message.toString());
 		this.connexionService.messages.next(message);
 	}
 }

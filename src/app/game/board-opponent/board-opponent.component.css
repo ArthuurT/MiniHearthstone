@@ -1,36 +1,22 @@
-#hand-player{
+#board-opponent{
     position: absolute;
-    border:solid black;
+    border:solid red;
     height:100%;
     width: 100%;
     white-space:nowrap;
     overflow-x:scroll;
     overflow-y:hidden;
-    text-align: center;
     overflow: visible;
+    text-align: center;
 }
 
-#hand-player > div{
+#board-opponent > div{
     margin-left:5px;
     display:inline-block;
 }
 
-#for, .cdk-drag {
-    position: relative;
+#for{
     height: 100%;
     width: 12%;
     background-color: brown;
-    text-align: center;
-}
-
-#for:active{
-    z-index: 2;
-}
-
-.cdk-drag-preview{
-    opacity: 0.6;
-}
-
-.cdk-drag-placeholder{
-    opacity: 0;
 }

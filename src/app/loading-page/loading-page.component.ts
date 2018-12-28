@@ -45,8 +45,6 @@ export class LoadingPageComponent{
     this.boolLoading = b;
     this.setPlayer(m)
     this.setOpponent(m);
-    
-
   }
 
   setPlayer(m){

@@ -1,3 +1,10 @@
-<div id="hand-player">
-
+<div 
+id="hand-player"
+cdkDropList 
+cdkDropListConnectedTo="board-player" 
+[cdkDropListData] = "array"
+(cdkDropListDropped)="drop($event)">
+    <div id = "for" *ngFor="let a of array" cdkDrag>
+        <app-carte [carte]="a"></app-carte>
+    </div>  
 </div>

@@ -1,0 +1,18 @@
+<div class="carte"> 
+    <div id="firstline">
+      <span id="mana">{{carte.coutMana}}</span>
+      <button id="button" type="button" (click)="setDesc()">?</button>
+    </div>
+
+    <div id="name">
+        <span>{{carte.nom}}</span>
+    </div>
+
+    <img *ngIf= "!descopen" id="image" src="../../../assets/img/{{carte.imageURL}}">
+    <div *ngIf="descopen" id="image">{{carte.description}}</div>
+
+    <div id="lastline">
+      <span id="vie">{{carte.pv}}</span>
+      <span id="degats">{{carte.degats}}</span>
+    </div>
+</div>

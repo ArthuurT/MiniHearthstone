@@ -6,8 +6,7 @@ import { map } from 'rxjs/operators';
 const CHAT_URL = 'ws://echo.websocket.org/';
 
 export interface Message {
-	playerName: string,
-	herosName: string
+	//...
 }
 
 @Injectable()

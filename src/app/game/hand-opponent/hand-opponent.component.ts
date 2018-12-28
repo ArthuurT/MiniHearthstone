@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './hand-opponent.component.html',
   styleUrls: ['./hand-opponent.component.css']
 })
-export class HandOpponentComponent implements OnInit {
+export class HandOpponentComponent{
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+fakeArray = new Array(10); 
 
 }

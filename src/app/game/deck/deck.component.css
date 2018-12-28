@@ -2,4 +2,10 @@
     border:solid black;
     height:100%;
     width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+#backcard{
+    height: 75%;
 }

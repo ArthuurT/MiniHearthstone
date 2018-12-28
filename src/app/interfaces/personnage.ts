@@ -1,7 +1,7 @@
-import { Serviteur } from "./serviteur";
+import { Carte } from './carte';
 
 export interface Personnage {
-    etatBoard : Array<Serviteur>;
+    etatBoard : Array<Carte>;
     pseudo : string;
     pv : number;
     mana : number;

@@ -1,12 +1,13 @@
 <div id="profile_player">  
-  <p>name</p>
-  <img id="id_img" src="../../../assets/img/heros1_ex.png"><br>
+  <p *ngIf="!joueurProfil" else templateName>{{game.joueur.pseudo}} </p> 
+  <p *ngIf="joueurProfil" else templateName>{{game.adversaire.pseudo}} </p>
+  <img id="id_img" src="../../../assets/img/Guerrier.png"><br>
   <i id="shield" class="material-icons">security</i>
-  <span>0</span>
+  <span>{{game.joueur.armure}}</span>
   <i id="life" class="material-icons">favorite</i>
-  <span>20</span><br>
+  <span>{{game.joueur.pv}}</span><br>
   <i id="mana" class="material-icons">flash_on</i>
-  <span>10</span>
+  <span>{{game.joueur.mana}}</span>
 </div>
 
 

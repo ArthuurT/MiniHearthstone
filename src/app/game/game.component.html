@@ -4,8 +4,8 @@
         <app-hand-opponent></app-hand-opponent>
     </div>
 
-    <div id="profile">
-        <app-profile></app-profile>
+    <div id="opponent">
+        <app-profile [joueurProfil] = false></app-profile>
     </div>
 
     <div id="deck">
@@ -16,13 +16,22 @@
         <app-infos-game></app-infos-game>
     </div>
 
+    <div id="board-player">
+        <app-board-player></app-board-player>
+    </div>
+
+    <div id="profile">
+        <app-profile [joueurProfil] = true></app-profile>
+    </div>
+
+    <div id="board-opponent">
+        <app-board-opponent></app-board-opponent>
+    </div>
+
     <div id="hand-player">
         <app-hand-player></app-hand-player>
     </div>
 
-    <div id="opponent">
-        <app-profile></app-profile>
-    </div>
 </div>
 
 
