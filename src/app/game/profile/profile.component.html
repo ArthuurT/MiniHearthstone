@@ -1,13 +1,27 @@
-<div id="profile_player">  
+<div 
+id="profile_player" 
+cdkDropList 
+[cdkDropListConnectedTo]="['board-opponent','board-player','hand-player']"
+(cdkDropListDropped)="drop($event)">
+
   <p *ngIf="!joueurProfil" else templateName>{{game.joueur.pseudo}} </p> 
   <p *ngIf="joueurProfil" else templateName>{{game.adversaire.pseudo}} </p>
+
   <img id="id_img" src="../../../assets/img/Guerrier.png"><br>
   <i id="shield" class="material-icons">security</i>
-  <span>{{game.joueur.armure}}</span>
+
+  <span *ngIf="!joueurProfil" else templateName>{{game.joueur.armure}} </span> 
+  <span *ngIf="joueurProfil" else templateName>{{game.adversaire.armure}} </span>
+
   <i id="life" class="material-icons">favorite</i>
-  <span>{{game.joueur.pv}}</span><br>
+
+  <span *ngIf="!joueurProfil" else templateName>{{game.joueur.pv}} </span> 
+  <span *ngIf="joueurProfil" else templateName>{{game.adversaire.pv}} </span><br>
+
   <i id="mana" class="material-icons">flash_on</i>
-  <span>{{game.joueur.mana}}</span>
+
+  <span *ngIf="!joueurProfil" else templateName>{{game.joueur.manaDisponible}}/{{game.joueur.manaTotal}} </span> 
+  <span *ngIf="joueurProfil" else templateName>{{game.adversaire.manaDisponible}}/{{game.joueur.manaTotal}} </span>
 </div>
 
 

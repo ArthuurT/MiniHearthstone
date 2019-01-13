@@ -23,11 +23,14 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
+    "net": "^1.0.2",
     "rxjs": "~6.3.3",
+    "sockjs-client": "^1.3.0",
+    "stompjs": "^2.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.10.0",
+    "@angular-devkit/build-angular": "^0.11.4",
     "@angular/cli": "~7.0.3",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",

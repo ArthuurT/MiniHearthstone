@@ -9,18 +9,12 @@ import { Carte } from 'src/app/interfaces/carte';
 export class CarteComponent{
 
   @Input() carte : Carte;
+  @Input() playable : boolean;
 
   descopen = false;
-  name = "Gobelin";
-  vie = 2;
-  mana = 2;
-  degats = 3;
-  desc = "ceci est une description de test blabla"
-
 
   public setDesc(){
     this.descopen = !this.descopen;
-    console.log(this.carte.id);
   }
 
 }

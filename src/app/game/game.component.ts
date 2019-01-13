@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Joueur } from '../interfaces/joueur';
 import { Adversaire } from '../interfaces/adversaire';
-import { ConnexionService } from '../connexion.service';
 import { CarteServiteur } from '../interfaces/carte-serviteur';
 import { CarteSort } from '../interfaces/carte-sort';
+import { CarteComponent } from './carte/carte.component';
+import { WebsocketService } from '../websocket.service';
+import { TimerService } from '../timer.service';
 
 
 declare var require: any;
@@ -17,17 +19,41 @@ export class GameComponent{
 
   @Input() joueur : Joueur;
   @Input() adversaire : Adversaire;
+  public estJoueurCourant : boolean;
 
-  constructor(private connexionService: ConnexionService) {
+  constructor(private webSocketService : WebsocketService, private timer : TimerService) {
 
-      let jsonTest = require('../../assets/gameState.json');
-      jsonTest = JSON.stringify(jsonTest);
-      jsonTest = JSON.parse(jsonTest);
-      
-      this.initJoueur(jsonTest);
-      this.initAdversaire(jsonTest);
+    let etatPartie = this.webSocketService.getEtatPartie();
+    etatPartie = JSON.stringify(etatPartie);
+    etatPartie = JSON.parse(etatPartie);
+  
+    this.initJoueur(etatPartie);
+    this.initAdversaire(etatPartie);
+    this.estJoueurCourant = etatPartie.estJoueurCourant;
+    this.timer.start();
 
-		connexionService.messages.subscribe(msg => { });
+    let ws = this.webSocketService.getWebSocket();
+    ws.subscribe("/user/queue/etatPartie",(frame) => {
+      let message = JSON.parse(frame.body);
+      this.webSocketService.setEtatPartie(message.etatPartie);
+      this.initJoueur(message.etatPartie);
+      this.initAdversaire(message.etatPartie);
+      console.log("Message reçu : " + message);
+    });
+    ws.subscribe("/user/queue/nouveauTour",(frame) => {
+      let message = JSON.parse(frame.body);
+      this.webSocketService.setEtatPartie(message.etatPartie);
+      this.initJoueur(message.etatPartie);
+      this.initAdversaire(message.etatPartie);
+      this.timer.reset();
+      this.estJoueurCourant = message.etatPartie.estJoueurCourant;
+      console.log("Message reçu : " + message);
+    });
+    ws.subscribe("/user/queue/finPartie",(frame) => {
+      let message = JSON.parse(frame.body);
+      let vainqueur = message.pseudo;
+      console.log("Message reçu : " + message);
+    });
   }
 
   // Init Joueur
@@ -37,28 +63,34 @@ export class GameComponent{
       pseudo : data['joueur']['pseudo'],
       heros : data['joueur']['heros']['type'],
       pv : data['joueur']['heros']['pointsVie'],
-      mana : data['joueur']['heros']['pointsMana'],
+      manaTotal : data['joueur']['mana']['capacite'],
+      manaDisponible : data['joueur']['mana']['quantite'],
       armure : data['joueur']['heros']['pointsArmure'],
+      coutAttaque : data['joueur']['heros']['actionSpeciale']['cout'],
+      cibleAttaque : data['joueur']['heros']['actionSpeciale']['cible'],
       etatBoard : [],
       etatMain : []
     };
 
+
     // Init Cartes + Ajout Main + Board
 
-    data['joueur']['etatMain']['serviteurs'].forEach(element => {
+    data['joueur']['main']['serviteurs'].forEach(element => {
       let c = this.initServiteur(element,this.joueur);
       this.joueur.etatMain.push(c);
     });
 
-    data['joueur']['etatMain']['sorts'].forEach(element => {
+    data['joueur']['main']['sorts'].forEach(element => {
       let c = this.initSort(element,this.joueur);
       this.joueur.etatMain.push(c);
     });
 
-    data['joueur']['etatBoard'].forEach(element => {
+    data['joueur']['board'].forEach(element => {
       let c = this.initServiteur(element,this.joueur);
       this.joueur.etatBoard.push(c);
     });
+
+    console.log(this.joueur.etatBoard);
   }
 
   // Init Adversaire
@@ -68,7 +100,8 @@ export class GameComponent{
       pseudo : data['adversaire']['pseudo'],
       heros : data['adversaire']['heros']['type'],
       pv : data['adversaire']['heros']['pointsVie'],
-      mana : data['adversaire']['heros']['pointsMana'],
+      manaTotal : data['adversaire']['mana']['capacite'],
+      manaDisponible : data['adversaire']['mana']['quantite'],
       armure : data['adversaire']['heros']['pointsArmure'],
       nbCartesMain : data['adversaire']['nbCartesMain'],
       etatBoard : []
@@ -76,7 +109,7 @@ export class GameComponent{
 
     // Init Cartes + Ajout Board
 
-    data['adversaire']['etatBoard'].forEach(element => {
+    data['adversaire']['board'].forEach(element => {
       let c = this.initServiteur(element,this.adversaire);
       this.adversaire.etatBoard.push(c);
     });
@@ -87,15 +120,22 @@ export class GameComponent{
 
     c = {
       joueur : joueur,
-      id : data['idCarte'],
-      coutMana : data['mana'],
+      id : data['identifiant'],
+      coutMana : data['cout'],
       description : data['description'],
       imageURL : data['image'],
       pv : data['vie'],
-      degats : data['dégats'],
-      nom : data['nom']
+      degats : data['degats'],
+      nom : data['nom'],
+      provocation : data['effetProvocation'],
+      lifesteal : data['effetVolDeVie'],
+      charge : data['effetCharge'],
+      jouable : data['jouable'],
+      leader : data['effetLeader'],
+      classe : data['classe'],
+      cible : data['cible'],
+      type : "serviteur"
     }
-
     return c;
   }
 
@@ -104,12 +144,14 @@ export class GameComponent{
 
     c = {
       joueur : joueur,
-      id : data['idCarte'],
-      coutMana : data['mana'],
+      id : data['identifiant'],
+      coutMana : data['cout'],
       description : data['description'],
       imageURL : data['image'],
-      cibleRequise : data['cible'],
-      nom : data['nom']
+      nom : data['nom'],
+      classe : data['classe'],
+      cible : data['cible'],
+      type : "sort"
     }
 
     return c;

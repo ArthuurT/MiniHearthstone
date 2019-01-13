@@ -1,6 +1,6 @@
 <div class="carte"> 
     <div id="firstline">
-      <span id="mana">{{carte.coutMana}}</span>
+      <span *ngIf = "playable" id="mana">{{carte.coutMana}}</span>
       <button id="button" type="button" (click)="setDesc()">?</button>
     </div>
 

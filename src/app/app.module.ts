@@ -16,7 +16,6 @@ import { HandPlayerComponent } from './game/hand-player/hand-player.component';
 import { HandOpponentComponent } from './game/hand-opponent/hand-opponent.component';
 import { ProfileComponent } from './game/profile/profile.component';
 import { WebsocketService } from './websocket.service';
-import { ConnexionService } from './connexion.service';
 import { CarteComponent} from './game/carte/carte.component';
 import { BoardOpponentComponent } from './game/board-opponent/board-opponent.component';
 import { BoardPlayerComponent } from './game/board-player/board-player.component'
@@ -44,7 +43,7 @@ import { BoardPlayerComponent } from './game/board-player/board-player.component
     FormsModule,
     DragDropModule
   ],
-  providers: [WebsocketService,ConnexionService],
+  providers: [WebsocketService],
   bootstrap: [RedirectComponent]
 })
 export class AppModule { }

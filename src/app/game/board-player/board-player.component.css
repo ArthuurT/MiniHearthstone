@@ -14,9 +14,22 @@
     display:inline-block;
 }
 
-#for{
+#for, .cdk-drag {
+    position: relative;
     height: 100%;
     width: 12%;
     background-color: brown;
+    text-align: center;
+}
 
+#for:active{
+    z-index: 2;
+}
+
+.cdk-drag-preview{
+    opacity: 0.6;
+}
+
+.cdk-drag-placeholder{
+    opacity: 0;
 }

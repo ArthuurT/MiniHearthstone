@@ -11,6 +11,8 @@
   
   <app-champselect></app-champselect>
   
-  <div id="bouton"><a routerLink="/loading"><button [disabled]="clickable()" (click)="sendMsg()" type="button" class="btn btn-dark" id="btnjouer">Jouer !</button></a></div>
+  <div id="bouton">
+    <button [disabled]="clickable()" (click)="lancerPartie()" type="button" class="btn btn-dark" id="btnjouer">Jouer !</button>
+  </div>
 </div>
 </body>

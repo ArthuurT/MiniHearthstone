@@ -1,53 +1,82 @@
 {
-    "joueurCourant": "Arthur",
+    "estJoueurCourant": "True",
     "joueur": {
         "pseudo": "Arthur",
         "heros": {
             "type": "Guerrier",
             "image": "http://www.slightstone.com/images/guerrier.png",
             "pointsVie": 30,
-            "pointsMana": 4,
-            "pointsArmure": 0
+            "pointsArmure": 0,
+			"actionSpeciale": {
+				"cout": 2,
+				"cible": "AUCUNE - UN_ADVERSAIRE"
+            }
+        },
+        "mana": {
+            "quantite": 4,
+            "capacite": 10
         },
         "etatMain": {
             "serviteurs": [
                 {
                     "idCarte": 2,
-                    "etat": "New - Used",
                     "nom": "Sanglier brocheroc", 
-                    "description": "Description du sanglier", 
+                    "description": "...", 
                     "image": "sanglierBrocheroc.svg",
+					"classe": "COMMUNE - GUERRIER - MAGE - PALADIN",
                     "mana": 1, 
                     "dégats": 1,
-                    "vie": 1
+                    "vie": 1,
+					"effetLeader": false,
+					"effetProvocation": false,
+					"effetVolDeVie": false,
+					"effetCharge": false,
+					"cible": "AUCUNE"
                 },
                 {
                     "idCarte": 3, 
-                    "etat": "New - Used",
                     "nom": "Yéti Noroit", 
-                    "description": "Description du yéti", 
+                    "description": "...", 
                     "image": "yetiNoroit.svg",
+					"classe": "COMMUNE - GUERRIER - MAGE - PALADIN",
                     "mana": 4, 
                     "dégats": 4,
-                    "vie": 5
+                    "vie": 5,
+					"effetLeader": false,
+					"effetProvocation": false,
+					"effetVolDeVie": false,
+					"effetCharge": false,
+					"cible": "AUCUNE"
                 }
             ],
-            "sorts": []
+            "sorts": [
+                {
+                    "idCarte": 7, 
+                    "nom": "Boule de feu", 
+                    "description": "...", 
+                    "image": "fireball.svg",
+					"classe": "COMMUNE - GUERRIER - MAGE - PALADIN",
+                    "mana": 4,
+					"cible": "UN_ADVERSAIRE"
+                }
+            ]
         },
         "etatBoard": [
             {
                 "idCarte": 1, 
-                "etat": "New - Updated - Dead",
                 "nom": "Soldat du comté-de-l'or", 
-                "description": "Description du soldat", 
+                "description": "...", 
                 "image": "soldat.svg",
+				"classe": "COMMUNE - GUERRIER - MAGE - PALADIN",
                 "mana": 1, 
                 "dégats": 1,
                 "vie": 2,
-                "jouable": false,
+                "jouable": true,
                 "effetLeader": false,
                 "effetProvocation": false,
-                "effetVolDeVie": false
+                "effetVolDeVie": false,
+                "effetCharge": false,
+                "cible": "UN_ADVERSAIRE"
             }
         ]
     },
@@ -57,24 +86,73 @@
             "type": "Paladin",
             "image": "http://www.slightstone.com/images/paladin.png",
             "pointsVie": 30,
-            "pointsMana": 6,
             "pointsArmure": 1
+        },
+        "mana": {
+            "quantite": 6,
+            "capacite": 10
         },
         "nbCartesMain": 4,
         "etatBoard": [
             {
                 "idCarte": 56, 
-                "etat": "New - Updated - Dead",
                 "nom": "Chevaucheur de loup", 
-                "description": "Description du loup", 
+                "description": "...", 
                 "image": "wolf.svg",
+				"classe": "COMMUNE - GUERRIER - MAGE - PALADIN",
                 "mana": 3, 
                 "dégats": 3,
                 "vie": 1,
-                "jouable": false,
+                "jouable": true,
                 "effetLeader": false,
                 "effetProvocation": false,
-                "effetVolDeVie": false
+                "effetVolDeVie": false,
+				"effetCharge": false
+            },
+            {
+                "idCarte": 57, 
+                "nom": "Chevaucheur de loup", 
+                "description": "...", 
+                "image": "wolf.svg",
+				"classe": "COMMUNE - GUERRIER - MAGE - PALADIN",
+                "mana": 2, 
+                "dégats": 3,
+                "vie": 1,
+                "jouable": true,
+                "effetLeader": false,
+                "effetProvocation": false,
+                "effetVolDeVie": false,
+				"effetCharge": false
+            },
+            {
+                "idCarte": 58, 
+                "nom": "Chevaucheur de loup", 
+                "description": "...", 
+                "image": "wolf.svg",
+				"classe": "COMMUNE - GUERRIER - MAGE - PALADIN",
+                "mana": 1, 
+                "dégats": 3,
+                "vie": 1,
+                "jouable": true,
+                "effetLeader": false,
+                "effetProvocation": false,
+                "effetVolDeVie": false,
+				"effetCharge": false
+            },
+            {
+                "idCarte": 59, 
+                "nom": "Chevaucheur de loup", 
+                "description": "...", 
+                "image": "wolf.svg",
+				"classe": "COMMUNE - GUERRIER - MAGE - PALADIN",
+                "mana": 0, 
+                "dégats": 3,
+                "vie": 1,
+                "jouable": true,
+                "effetLeader": false,
+                "effetProvocation": false,
+                "effetVolDeVie": false,
+				"effetCharge": false
             }
         ]
     }

@@ -2,6 +2,6 @@
     <h1 id="title">SLIGHTSTONE</h1>
     <img src="../../../assets/img/logo.png">
     <p> Temps restant : </p>
-    <p> 01:22 </p>
-    <button type="button" class="btn btn-outline-secondary">Passer mon tour</button>
+    <p> 0{{this.timer.minutes}} : {{this.timer.secondes}} </p>
+    <button type="button" class="btn btn-outline-secondary" (click)="skip()">Passer mon tour</button>
 </div>

@@ -1,5 +1,10 @@
-<div id="board-opponent" class="example-boundary">
-    <div id = "for" *ngFor="let a of array">
-        <app-carte [carte]="a"></app-carte>
-      </div>
+<div
+id="board-opponent" 
+cdkDropList 
+[cdkDropListConnectedTo]="['hand-player','board-player','profile_player']"
+(cdkDropListDropped)="drop($event)"
+[cdkDropListData]="array">
+  <div id = "for" *ngFor="let a of array; let i = index" (mouseover)="carteCible(i)">
+    <app-carte [carte]="a" [playable]="false"></app-carte>
+  </div>     
 </div>

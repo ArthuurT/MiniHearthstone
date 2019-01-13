@@ -4,7 +4,8 @@ export interface Personnage {
     etatBoard : Array<Carte>;
     pseudo : string;
     pv : number;
-    mana : number;
+    manaTotal : number;
+    manaDisponible : number;
     armure : number;
     heros : string;
 }

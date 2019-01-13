@@ -1,4 +1,4 @@
-import { Component, OnInit, Host, Input } from '@angular/core';
+import { Component, OnInit, Host, Input, OnChanges } from '@angular/core';
 import {CarteComponent} from '../carte/carte.component';
 import {Carte} from '../../interfaces/carte';
 import { GameComponent } from '../game.component';
@@ -11,13 +11,9 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class HandPlayerComponent{
 
-  public array:Carte[];
+  @Input() public array:Carte[];
 
-  constructor(@Host() public game: GameComponent){
-    this.array = game.joueur.etatMain;
-  }
-
-  drop(event: CdkDragDrop<string[]>){
+  drop(event: CdkDragDrop<Carte[]>){
     if(event.previousContainer === event.container){
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     }

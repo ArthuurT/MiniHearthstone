@@ -1,39 +1,52 @@
 import { Injectable } from '@angular/core';
-import * as Rx from 'rxjs';
+import * as Stomp from 'stompjs';
+import * as SockJS from 'sockjs-client';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class WebsocketService {
 
-  constructor() { }
+  private serverUrl = 'http://78.240.17.152:56552/websocket';
+  private stompClient;
+  private etatPartie;
+  public ready:boolean;
+  public name:string;
+  public image:string;
 
-  private subject: Rx.Subject<MessageEvent>;
+  constructor() { this.initializeWebSocketConnection(); }
 
-  public connect(url): Rx.Subject<MessageEvent> {
-    if (!this.subject) {
-      this.subject = this.create(url);
-      console.log("Successfully connected: " + url);
-    } 
-    return this.subject;
+  initializeWebSocketConnection(){
+    this.ready = null;
+    this.name = "";
+    this.image = "";
+    let ws = new SockJS(this.serverUrl);
+    this.stompClient = Stomp.over(ws);
+    console.log("Connection établie");
   }
 
-  private create(url): Rx.Subject<MessageEvent> {
-    let ws = new WebSocket(url);
+  getWebSocket(){
+    if(this.stompClient != null){
+      return this.stompClient;
+    }else{
+      console.log("Websocket introuvable");
+    }
+  }
 
-    let observable = Rx.Observable.create(
-    (obs: Rx.Observer<MessageEvent>) => {
-      ws.onmessage = obs.next.bind(obs);
-      ws.onerror = obs.error.bind(obs);
-      ws.onclose = obs.complete.bind(obs);
-      return ws.close.bind(ws);
-    })
-    let observer = {
-        next: (data: Object) => {
-          if (ws.readyState === WebSocket.OPEN) {
-            ws.send(JSON.stringify(data));
-          }
-        }
-      }
-      return Rx.Subject.create(observer, observable);
+  setEtatPartie(etatPartie){
+    this.etatPartie = etatPartie;
+  }
+
+  getEtatPartie(){
+    return this.etatPartie;
+  }
+
+  getOpponentName(){
+    return "";
+  }
+
+  getOpponentPicture(){
+    return "";
   }
 
 }

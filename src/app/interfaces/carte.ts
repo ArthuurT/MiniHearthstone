@@ -7,4 +7,7 @@ export interface Carte {
     coutMana : number;
     description : string;
     imageURL : string;
+    classe : string;
+    cible : string;
+    type : string;
 }

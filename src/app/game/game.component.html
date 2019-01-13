@@ -1,12 +1,12 @@
 <div>
 
     <div id="hand-opponent">
-        <app-hand-opponent></app-hand-opponent>
+        <app-hand-opponent [nbCartesMain] = "adversaire.nbCartesMain"></app-hand-opponent>
     </div>
 
-    <div id="opponent">
-        <app-profile [joueurProfil] = false></app-profile>
-    </div>
+    <div id="profile">
+            <app-profile [joueurProfil] = true></app-profile>
+        </div>
 
     <div id="deck">
         <app-deck></app-deck>
@@ -17,19 +17,19 @@
     </div>
 
     <div id="board-player">
-        <app-board-player></app-board-player>
+        <app-board-player [array] = "joueur.etatBoard"></app-board-player>
     </div>
 
-    <div id="profile">
-        <app-profile [joueurProfil] = true></app-profile>
+    <div id="opponent">
+            <app-profile [joueurProfil] = false></app-profile>
     </div>
 
     <div id="board-opponent">
-        <app-board-opponent></app-board-opponent>
+        <app-board-opponent [array] = "adversaire.etatBoard"></app-board-opponent>
     </div>
 
     <div id="hand-player">
-        <app-hand-player></app-hand-player>
+        <app-hand-player [array] = "joueur.etatMain"></app-hand-player>
     </div>
 
 </div>
