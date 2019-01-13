@@ -1,7 +1,9 @@
 <div id="stats">
     <h1 id="title">SLIGHTSTONE</h1>
     <img src="../../../assets/img/logo.png">
-    <p> Temps restant : </p>
-    <p> 0{{this.timer.minutes}} : {{this.timer.secondes}} </p>
+    <div id = "timer">
+        <p> Temps restant : </p>
+        <p> 0{{this.timer.minutes}} : {{this.timer.secondes}} </p>
+    </div>
     <button type="button" class="btn btn-outline-secondary" (click)="skip()">Passer mon tour</button>
 </div>

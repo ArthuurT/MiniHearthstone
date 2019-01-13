@@ -1,11 +1,24 @@
 #deck{
-    border:solid black;
-    height:100%;
+    border: 2px solid;
+    border-image: url('../../../assets/img/gold.jpg') 10 round;    height:100%;
     width: 100%;
     text-align: center;
     display: inline-block;
+    font-family: 'test';
+    font-size: 30px;
+    background-image: url('../../../assets/img/back.jpg');
+
 }
 
 #backcard{
-    height: 75%;
+    height: 65%;
+}
+
+@font-face {
+
+    font-family: 'test';
+    src: url('../../../assets/img/lion_king.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
 }

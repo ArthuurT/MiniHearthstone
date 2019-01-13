@@ -9,4 +9,5 @@ export interface Personnage {
     armure : number;
     heros : string;
     image : string;
+    identifiant : number;
 }

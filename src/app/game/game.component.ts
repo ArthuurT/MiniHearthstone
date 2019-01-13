@@ -62,6 +62,7 @@ export class GameComponent{
     this.joueur = {
       pseudo : data['joueur']['pseudo'],
       heros : data['joueur']['heros']['type'],
+      identifiant : data['joueur']['heros']['identifiant'],
       image : "../../../assets/img/" + data['joueur']['heros']['image'],
       pv : data['joueur']['heros']['pointsVie'],
       manaTotal : data['joueur']['mana']['capacite'],
@@ -119,6 +120,7 @@ export class GameComponent{
     this.adversaire = {
       pseudo : data['adversaire']['pseudo'],
       heros : data['adversaire']['heros']['type'],
+      identifiant : data['adversaire']['heros']['identifiant'],
       image : "../../../assets/img/" + data['adversaire']['heros']['image'],
       pv : data['adversaire']['heros']['pointsVie'],
       manaTotal : data['adversaire']['mana']['capacite'],

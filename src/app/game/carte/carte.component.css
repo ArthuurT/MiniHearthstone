@@ -2,8 +2,7 @@
 .carte{
     position: relative;
     height: 100%;
-    width: 100%;
-    border: 2px solid black
+    width: 100%;  
 }
 
 #firstline{
@@ -13,7 +12,10 @@
 
 #mana{
     margin-right: 50%;
-    color: blue;
+    color: rgb(8, 12, 206);
+    font-family: 'test';
+    font-size: 22px;;
+    font-weight: bold;
 }
 
 #name{
@@ -42,12 +44,28 @@
 
 #vie{
     margin-right: 65%;
-    color: red;
+    color: rgba(78, 48, 9, 0.774);
+    font-family: 'test';
+    font-size: 22px;;
+    font-weight: bold;
 
 }
 
 #degats{
-    color: grey;
+
+    color: rgb(196, 28, 28);
+    font-family: 'test';
+    font-size: 22px;;
+    font-weight: bold;
+
 }
 
+@font-face {
+
+    font-family: 'test';
+    src: url('../../../assets/img/lion_king.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
