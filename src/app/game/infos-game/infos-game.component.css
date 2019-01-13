@@ -1,15 +1,35 @@
 #stats{
-    border:solid black;
-    height:100%;
+    border: 2px solid;
+    border-image: url('../../../assets/img/gold.jpg') 10 round;    height:100%;
     width: 100%;
     text-align: center;
+    font-family: 'test';
+    background-image: url('../../../assets/img/back.jpg');
+
+
 }
 
 #title{
     margin-top: 2%;
-    font-size: 100%;
+    font-size: 150%;
 }
 
 p{
     font-size: 150%;
+}
+
+button{
+
+    font-family: 'test';
+    font-size: 20px;
+
+}
+
+@font-face {
+
+    font-family: 'test';
+    src: url('../../../assets/img/lion_king.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
 }

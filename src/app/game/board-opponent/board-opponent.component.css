@@ -1,6 +1,6 @@
 #board-opponent{
     position: absolute;
-    border:solid red;
+    border: 2px dotted rgb(122, 118, 118);
     height:100%;
     width: 100%;
     white-space:nowrap;
@@ -9,6 +9,8 @@
     overflow: visible;
     text-align: center;
     padding: 0.15%;
+    background-image: url('../../../assets/img/marble.jpg');
+
 }
 
 #board-opponent > div{
@@ -19,6 +21,7 @@
 #for{
     height: 100%;
     width: 12%;
-    background-color: brown;
+    border: 2px solid rgb(95, 62, 32);
+    background-color: rgb(175, 146, 107);    
     border-radius: 10px;
 }

@@ -10,9 +10,14 @@ p{
 }
 
 #profile_player{
-    border:solid black;
+    border: 2px solid;
+    border-image: url('../../../assets/img/gold.jpg') 10 round;        
     height:100%;
     width: 100%;
+    font-family: 'test';
+    font-size: 26px;
+    background-image: url('../../../assets/img/back.jpg');
+
 }
 
 #shield{
@@ -25,4 +30,13 @@ p{
 
 #mana{
     margin-left: 4rem;
+}
+
+@font-face {
+
+    font-family: 'test';
+    src: url('../../../assets/img/lion_king.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
 }

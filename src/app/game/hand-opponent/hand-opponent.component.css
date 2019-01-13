@@ -1,5 +1,6 @@
 #hand-opponent{
-    border:solid black;
+    border: 3px solid;
+    border-image: url('../../../assets/img/gold.jpg') 10 round;        
     height:50%;
     width: 100%;
     text-align: center;
@@ -8,6 +9,7 @@
     white-space: nowrap;
     display: inline-block;
     padding: 0.15%;
+    background-image: url('../../../assets/img/blackMarble.jpg');
 }
 
 #backcard{
