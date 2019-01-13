@@ -49,12 +49,12 @@ export class LoadingPageComponent{
 
   setPlayer(m){
     this.playerName = m['joueur']['pseudo'];
-    this.imgPlayer = "../../assets/img/" + m['joueur']['heros']['image'];
+    this.imgPlayer = "assets/img/" + m['joueur']['heros']['image'];
   }
 
   setOpponent(m){
     this.opponentName = m['adversaire']['pseudo'];
-    this.imgOpponent = "../../assets/img/" + m['adversaire']['heros']['image'];
+    this.imgOpponent = "/assets/img/" + m['adversaire']['heros']['image'];
   }
 
 }

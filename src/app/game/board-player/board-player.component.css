@@ -7,6 +7,8 @@
     overflow-x:scroll;
     overflow-y:hidden;
     text-align: center;
+    padding: 0.15%;
+    background-image: url('../../../assets/img/marble.jpg');
 }
 
 #board-player > div{
@@ -18,5 +20,5 @@
     height: 100%;
     width: 12%;
     background-color: brown;
-
+    border-radius: 10px;
 }

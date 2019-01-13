@@ -8,6 +8,7 @@
     overflow-y:hidden;
     text-align: center;
     overflow: visible;
+    padding: 0.15%;
 }
 
 #hand-player > div{
@@ -20,6 +21,7 @@
     height: 100%;
     width: 12%;
     background-color: brown;
+    border-radius: 10px;
     text-align: center;
 }
 

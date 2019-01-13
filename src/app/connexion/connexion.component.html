@@ -1,15 +1,17 @@
 <body>
+
+<div id="logo"><img src="../../assets/img/logo.png"></div>
+
 <div class="container">
 
-  <div id="logo"><img src="../../assets/img/logo.png"></div>
-
-  <div id="Slight"><h1> SlightStone</h1></div>
+    <div class="Slight"><h1> SlightStone</h1></div>
 
   <app-input></app-input>
 
   <div id="Slight"><h3> Choix du Héros </h3></div>
   
   <app-champselect></app-champselect>
+  
   
   <div id="bouton"><a routerLink="/loading"><button [disabled]="clickable()" (click)="sendMsg()" type="button" class="btn btn-dark" id="btnjouer">Jouer !</button></a></div>
 </div>

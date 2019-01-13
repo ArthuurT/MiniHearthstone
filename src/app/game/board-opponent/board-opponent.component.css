@@ -8,6 +8,7 @@
     overflow-y:hidden;
     overflow: visible;
     text-align: center;
+    padding: 0.15%;
 }
 
 #board-opponent > div{
@@ -19,4 +20,5 @@
     height: 100%;
     width: 12%;
     background-color: brown;
+    border-radius: 10px;
 }
