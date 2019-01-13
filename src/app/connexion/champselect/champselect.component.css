@@ -1,3 +1,9 @@
+#choixHeros{
+height: 40%;
+text-align: center;
+
+}
+
 img{
     width: 15rem;
     margin-right: 1rem;
@@ -47,13 +53,12 @@ img:active{
   border:5px ridge rgb(112, 83, 54);
   background-image: url('../../../assets/img/stone2.jpeg');
   font-family: 'wendell';
-  font-size: 30px;  
+  font-size: 26px;  
+  margin-top : 2%;
+    width: 75%;
+    height: auto%;
   }
 
-  #fig{
-    position: absolute;
-    margin-top : 2%;
-  }
    
    a:hover figcaption{
   transition:all 1s;

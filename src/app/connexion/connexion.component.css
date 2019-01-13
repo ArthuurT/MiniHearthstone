@@ -2,50 +2,75 @@ body{
 
     background-image: url('../../assets/img/test.jpg');
     width: 100%;
+    
 }
 
 div{
+
     text-align: center;
+
 }
 
 
 #btnjouer{
+
     margin-top: 7rem;
     margin-bottom: 3rem;
     width: 9rem;
     height: 2.6rem;
     font-size: 1.2rem;
+
 }
 
 
 h1{
+
     font-family: test;
     font-size: 7rem;
     margin-bottom: 1.5rem;
-    position:absolute;
+    position: absolute;
     width: 70%;
+    height: 25%;
+
 }
 
 
 #logo{
+
     position: absolute;
-    top:0px;
-    left:0px;
+    top:5px;
+    left:5px;
+    text-align: left;
+    width: 25%;
+    height: 100%;
+
 }
 
 
 h3{
+
     font-family: test;
     font-size: 3rem;
     position:absolute;
     width: 70%;
     top: 30%;
+
 }
 
 
 @font-face {
+
     font-family: 'test';
     src: url('../../assets/img/lion_king.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+
+}
+
+.container{
+
+    width: 75%;
+    height: 100%;
+    text-align: center;
+
 }

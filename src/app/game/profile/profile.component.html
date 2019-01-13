@@ -7,7 +7,8 @@ cdkDropList
   <p *ngIf="!joueurProfil" else templateName>{{game.joueur.pseudo}} </p> 
   <p *ngIf="joueurProfil" else templateName>{{game.adversaire.pseudo}} </p>
 
-  <img id="id_img" src="../../../assets/img/Guerrier.png"><br>
+  <img *ngIf="!joueurProfil" id="id_img" src={{game.joueur.image}}>
+  <img *ngIf="joueurProfil" id="id_img" src={{game.adversaire.image}}><br>
   <i id="shield" class="material-icons">security</i>
 
   <span *ngIf="!joueurProfil" else templateName>{{game.joueur.armure}} </span> 

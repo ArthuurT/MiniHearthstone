@@ -14,12 +14,13 @@ import { WebsocketService } from 'src/app/websocket.service';
 export class BoardPlayerComponent{
 
   @Input() public array:Carte[];
+  public cible:number;
 
   constructor(@Host() public game: GameComponent, private webSocketService : WebsocketService){}
 
   drop(event: CdkDragDrop<any>){
     let carte = event.previousContainer.data[event.previousIndex];
-    
+    let carteCible = event.container.data[this.cible];
     if(!(event.previousContainer === event.container) && 
           this.game.estJoueurCourant &&
           this.manaSuffisant(carte) && 
@@ -29,10 +30,26 @@ export class BoardPlayerComponent{
           console.log(carte);
           if(carte.type == "serviteur"){
             this.poserServiteur(carte.id);
-          }else if(carte.type == "sort"){
-            this.poserSort(carte.id,null);
+          }else if(carte.type == "sort" && carte.cible == "AUCUNE"){
+            if(carte.id != -1){
+              this.poserSort(carte.id,null);
+            }else{
+              this.lancerAction(null);
+              //event.previousContainer.data.splice(event.previousContainer.data.indexOf(carte),1);
+            }
+          }else if((carte.type == "sort" && carte.cible == "UN_SERVITEUR_ALLIE")){
+            if(carte.id != -1){
+              this.poserSort(carte.id,carteCible.id);
+            }else{
+              this.lancerAction(carteCible.id);
+              //event.previousContainer.data.splice(event.previousContainer.data.indexOf(carte),1);
+            }
           }
     }
+  }
+
+  carteCible(index){
+    if(this.cible != index) this.cible = index;
   }
 
   manaSuffisant(carte:Carte){
@@ -40,7 +57,7 @@ export class BoardPlayerComponent{
   }
 
   estPosable(carte:Carte){
-    return (carte.type == "serviteur" || (carte.type == "sort" && carte.cible == "AUCUNE"));
+    return (carte.type == "serviteur" || (carte.type == "sort" && carte.cible == "AUCUNE") || (carte.type == "sort" && carte.cible == "UN_SERVITEUR_ALLIE"));
   }
 
   poserServiteur(identifiant){
@@ -53,6 +70,12 @@ export class BoardPlayerComponent{
     let ws = this.webSocketService.getWebSocket();
     ws.send("/app/jouerCarteSort",{},JSON.stringify({'idCarte': identifiant, 'idCible' : cible}));
     console.log("sort lancé :" + identifiant);
+  }
+
+  lancerAction(cible){
+    let ws = this.webSocketService.getWebSocket();
+    ws.send("/app/lancerActionSpecial",{},JSON.stringify({'idCible' : cible}));
+    console.log("action spéciale lancée :" + cible);
   }
 
 }

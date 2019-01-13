@@ -1,14 +1,25 @@
 
 <body>
-    <img id="logo" src="../../../assets/img/Logo-SlightStone.png">
+    
+  <div id="logo"><img src="../../../assets/img/logo.png"></div>  
+  
   <div class="container">
-    <h1> SlightStone</h1>
-    <p>{{playerName}}</p>
-    <img src="{{imgPlayer}}">
-    <h1> VS </h1>
+    <div class="Slight"><h1> SlightStone</h1></div>
+    
+    <div class="infos"><p>{{playerName}}</p></div>
+    
+    <div class="img"><img src="{{imgPlayer}}"></div>
+    
+    <div><h1> VS </h1></div>
 
-    <div class="lds-ripple"><div></div><div></div></div>
-    <p [hidden]="boolLoading" >Votre partie va bientôt commencer...</p>
+    <div class="infos"><p>{{opponentName}}</p></div>
+    
+    <div class="img"><img src="{{imgOpponent}}"></div>
 
+    <div class="recherche"><p>Recherche d'un adversaire...</p></div>
+    
+    <div class="load"><div class="lds-ripple"><div></div><div></div></div></div>
+   
+    <div class="stat"><p [hidden]="!boolLoading" >Votre partie va bientot commencer...</p></div>
   </div>
 </body>

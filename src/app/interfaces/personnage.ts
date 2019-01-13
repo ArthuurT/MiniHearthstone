@@ -8,4 +8,5 @@ export interface Personnage {
     manaDisponible : number;
     armure : number;
     heros : string;
+    image : string;
 }

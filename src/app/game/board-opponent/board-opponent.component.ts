@@ -23,13 +23,16 @@ export class BoardOpponentComponent{
     if(event.isPointerOverContainer && this.game.estJoueurCourant){
       if(carte.type == "sort" && (carte.cible == "UN_ADVERSAIRE" || carte.cible == "UN_SERVITEUR_ADVERSE")){
         // Envoi message au serveur (Sort joué)
+        if(carte.id != -1){
           this.poserSort(carte.id,carteCible.id);
-          console.log(carteCible);
+        }else{
+          this.lancerAction(carteCible.id);
+          //event.previousContainer.data.splice(event.previousContainer.data.indexOf(carte),1);
+        }
       }else if(carte.type == "serviteur"){
         if(carte.jouable && event.previousContainer.id == "board-player"){
           // Envoi message au serveur (Serviteur attaqué)
             this.attaquer(carte.id,carteCible.id);
-            console.log(carteCible);
         }
       }
     }
@@ -49,6 +52,12 @@ export class BoardOpponentComponent{
     let ws = this.webSocketService.getWebSocket();
     ws.send("/app/attaquer",{},JSON.stringify({'idServiteur': identifiant, 'idCible' : cible}));
     console.log("attaque lancé :" + identifiant);
+  }
+
+  lancerAction(cible){
+    let ws = this.webSocketService.getWebSocket();
+    ws.send("/app/lancerActionSpecial",{},JSON.stringify({'idCible' : cible}));
+    console.log("action spéciale lancée :" + cible);
   }
 
 }

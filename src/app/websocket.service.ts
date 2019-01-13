@@ -42,11 +42,11 @@ export class WebsocketService {
   }
 
   getOpponentName(){
-    return "";
+    return this.etatPartie.adversaire.pseudo;
   }
 
   getOpponentPicture(){
-    return "";
+    return this.etatPartie.adversaire.heros.image;
   }
 
 }

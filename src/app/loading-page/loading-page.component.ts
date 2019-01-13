@@ -25,10 +25,12 @@ export class LoadingPageComponent{
 
     this.playerName = this.webSocketService.name;
     this.imgPlayer = this.webSocketService.image;
+
     let ws = this.webSocketService.getWebSocket();
     ws.subscribe("/user/queue/abandon",(frame) => {
       this.router.navigateByUrl('/connexion');
     });
+
     if(!this.webSocketService.ready){
       let ws = this.webSocketService.getWebSocket();
       ws.subscribe("/user/queue/debutPartie",(frame) => {
@@ -44,13 +46,25 @@ export class LoadingPageComponent{
 
   debutPartie(){
     this.setLoading();
-    //sleep
+    console.log(this.playerName + " : " + this.imgPlayer);
+    console.log(this.opponentName + " : " + this.imgOpponent);
+    this.sleep(5000).then(() => {
+      this.router.navigateByUrl('/game');
+    });
+  }
+
+  goGame(){
     this.router.navigateByUrl('/game');
   }
 
   setLoading(){
     this.boolLoading = true;
     this.opponentName = this.webSocketService.getOpponentName();
-    this.imgOpponent = this.webSocketService.getOpponentPicture();
+    this.imgOpponent = "../../../assets/img/" + this.webSocketService.getOpponentPicture();
   }
+
+  sleep(time){
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
 }

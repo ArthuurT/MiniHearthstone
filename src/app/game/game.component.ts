@@ -62,6 +62,7 @@ export class GameComponent{
     this.joueur = {
       pseudo : data['joueur']['pseudo'],
       heros : data['joueur']['heros']['type'],
+      image : "../../../assets/img/" + data['joueur']['heros']['image'],
       pv : data['joueur']['heros']['pointsVie'],
       manaTotal : data['joueur']['mana']['capacite'],
       manaDisponible : data['joueur']['mana']['quantite'],
@@ -85,12 +86,31 @@ export class GameComponent{
       this.joueur.etatMain.push(c);
     });
 
+    let attaqueSpeciale = this.initAttaqueSpeciale(data,this.joueur);
+    this.joueur.etatMain.push(attaqueSpeciale);
+  
     data['joueur']['board'].forEach(element => {
       let c = this.initServiteur(element,this.joueur);
       this.joueur.etatBoard.push(c);
     });
+  }
 
-    console.log(this.joueur.etatBoard);
+  initAttaqueSpeciale(data,joueur){
+    let c : CarteSort;
+
+    c = {
+      joueur : joueur,
+      id : -1,
+      coutMana : data['joueur']['heros']['actionSpeciale']['cout'],
+      description : data['joueur']['heros']['actionSpeciale']['description'],
+      imageURL : data['joueur']['heros']['actionSpeciale']['image'],
+      nom : "Sort Spécial",
+      classe : "SORT SPECIAL",
+      cible : data['joueur']['heros']['actionSpeciale']['cible'],
+      type : "sort"
+    }
+
+    return c;
   }
 
   // Init Adversaire
@@ -99,6 +119,7 @@ export class GameComponent{
     this.adversaire = {
       pseudo : data['adversaire']['pseudo'],
       heros : data['adversaire']['heros']['type'],
+      image : "../../../assets/img/" + data['adversaire']['heros']['image'],
       pv : data['adversaire']['heros']['pointsVie'],
       manaTotal : data['adversaire']['mana']['capacite'],
       manaDisponible : data['adversaire']['mana']['quantite'],

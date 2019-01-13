@@ -12,7 +12,10 @@ export class ProfileComponent{
 
   @Input() joueurProfil : boolean;
   fakeArray = new Array(1);
-  constructor(@Host() public game: GameComponent){}
+  constructor(@Host() public game: GameComponent){
+    console.log(game.joueur.image);
+    console.log(game.adversaire.image);
+  }
 
   drop(event: CdkDragDrop<any>){
     let carte = event.previousContainer.data[event.previousIndex];
