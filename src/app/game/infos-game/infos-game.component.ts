@@ -9,7 +9,7 @@ import { WebsocketService } from 'src/app/websocket.service';
 })
 export class InfosGameComponent{
 
-  constructor(private timer : TimerService, private ws : WebsocketService) { }
+  constructor(public timer : TimerService, private ws : WebsocketService) { }
 
   skip(){
     let ws = this.ws.getWebSocket();

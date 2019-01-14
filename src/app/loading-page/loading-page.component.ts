@@ -16,10 +16,10 @@ declare var require: any;
 export class LoadingPageComponent{
   
   public boolLoading : boolean = false;
-  private playerName : string;
-  private imgPlayer : string;
-  private opponentName : string;
-  private imgOpponent : string;
+  public playerName : string;
+  public imgPlayer : string;
+  public opponentName : string;
+  public imgOpponent : string;
   private ready : boolean = false;
 
   constructor(private webSocketService : WebsocketService, private router : Router, private timer : TimerService){

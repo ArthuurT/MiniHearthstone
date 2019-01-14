@@ -10,4 +10,6 @@ export interface Carte {
     classe : string;
     cible : string;
     type : string;
+    degats : number;
+    pv : number;
 }

@@ -109,7 +109,9 @@ export class GameComponent{
       nom : "Sort Spécial",
       classe : "SORT SPECIAL",
       cible : data['joueur']['heros']['actionSpeciale']['cible'],
-      type : "sort"
+      type : "sort",
+      degats : null,
+      pv : null
     }
 
     return c;
@@ -177,7 +179,9 @@ export class GameComponent{
       nom : data['nom'],
       classe : data['classe'],
       cible : data['cible'],
-      type : "sort"
+      type : "sort",
+      degats : null,
+      pv : null
     }
 
     return c;
