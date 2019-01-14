@@ -22,7 +22,7 @@ cdkDropList
   <i id="mana" class="material-icons">flash_on</i>
 
   <span *ngIf="!joueurProfil" else templateName>{{game.joueur.manaDisponible}}/{{game.joueur.manaTotal}} </span> 
-  <span *ngIf="joueurProfil" else templateName>{{game.adversaire.manaDisponible}}/{{game.joueur.manaTotal}} </span>
+  <span *ngIf="joueurProfil" else templateName>{{game.adversaire.manaDisponible}}/{{game.adversaire.manaTotal}} </span>
 </div>
 
 

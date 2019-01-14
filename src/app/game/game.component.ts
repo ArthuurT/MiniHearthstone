@@ -87,9 +87,10 @@ export class GameComponent{
       this.joueur.etatMain.push(c);
     });
 
-    let attaqueSpeciale = this.initAttaqueSpeciale(data,this.joueur);
-    this.joueur.etatMain.push(attaqueSpeciale);
-  
+    if(data['joueur']['heros']['actionChargee']){
+      let attaqueSpeciale = this.initAttaqueSpeciale(data,this.joueur);
+      this.joueur.etatMain.push(attaqueSpeciale);
+    }
     data['joueur']['board'].forEach(element => {
       let c = this.initServiteur(element,this.joueur);
       this.joueur.etatBoard.push(c);
@@ -129,6 +130,8 @@ export class GameComponent{
       nbCartesMain : data['adversaire']['nbCartesMain'],
       etatBoard : []
     };
+
+    console.log(this.adversaire.manaTotal + " / " + this.adversaire.manaDisponible);
 
     // Init Cartes + Ajout Board
 

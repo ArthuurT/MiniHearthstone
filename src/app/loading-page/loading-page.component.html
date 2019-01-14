@@ -12,13 +12,13 @@
     
     <div><h1> VS </h1></div>
 
-    <div class="infos"><p>{{opponentName}}</p></div>
+    <div id="opponentName"><p>{{opponentName}}</p></div>
     
-    <div class="img"><img src="{{imgOpponent}}"></div>
+    <div id="opponentImage"><img src="{{imgOpponent}}"></div>
 
-    <div class="recherche"><p>Recherche d'un adversaire...</p></div>
+    <div class="recherche" [hidden]="boolLoading" ><p>Recherche d'un adversaire...</p></div>
     
-    <div class="load"><div class="lds-ripple"><div></div><div></div></div></div>
+    <div class="load" [hidden]="boolLoading"><div class="lds-ripple"><div></div><div></div></div></div>
    
     <div class="stat"><p [hidden]="!boolLoading" >Votre partie va bientot commencer...</p></div>
   </div>

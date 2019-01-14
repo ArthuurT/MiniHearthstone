@@ -22,12 +22,19 @@ export class ProfileComponent{
     let carte = event.previousContainer.data[event.previousIndex];
 
     if(event.previousContainer.id == "board-player"){
+      console.log("venant du board");
       // Envoi serveur (attaque serviteur -> adversaire)
       this.attaquer(carte.id,this.game.adversaire.identifiant);
     }else if(event.previousContainer.id = "hand-player"){
-      if(carte.cible == "ADVERSAIRE" && carte.type == "sort"){
+      console.log(carte);
+      if((carte.cible == "ADVERSAIRE" || carte.cible == "UN_ADVERSAIRE") && carte.type == "sort"){
         // Envoi serveur (sort ciblé -> adversaire)
-        this.poserSort(carte.id,this.game.adversaire.identifiant);
+        if(carte.id != -1){
+          this.poserSort(carte.id,this.game.adversaire.identifiant);
+        }else{
+          this.lancerAction(this.game.adversaire.identifiant);
+          //event.previousContainer.data.splice(event.previousContainer.data.indexOf(carte),1);
+        }
       }else if(carte.cible == "ADVERSAIRE" && carte.type == "serviteur"){
         // Envoi serveur (serviteur ciblé -> adversaire)
         // (A faire)
@@ -46,6 +53,12 @@ export class ProfileComponent{
     let ws = this.webSocketService.getWebSocket();
     ws.send("/app/jouerCarteSort",{},JSON.stringify({'idCarte': identifiant, 'idCible' : cible}));
     console.log("sort lancé :" + identifiant);
+  }
+
+  lancerAction(cible){
+    let ws = this.webSocketService.getWebSocket();
+    ws.send("/app/lancerActionSpeciale",{},JSON.stringify({'idCible' : cible}));
+    console.log("action spéciale lancée :" + cible);
   }
 
 

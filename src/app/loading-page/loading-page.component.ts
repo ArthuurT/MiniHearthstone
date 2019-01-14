@@ -3,6 +3,7 @@ import { WebsocketService } from '../websocket.service';
 import { Joueur } from '../interfaces/joueur';
 import { Adversaire } from '../interfaces/adversaire';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TimerService } from '../timer.service';
 
 declare var require: any;
 
@@ -21,7 +22,7 @@ export class LoadingPageComponent{
   private imgOpponent : string;
   private ready : boolean = false;
 
-  constructor(private webSocketService : WebsocketService, private router : Router){
+  constructor(private webSocketService : WebsocketService, private router : Router, private timer : TimerService){
 
     this.playerName = this.webSocketService.name;
     this.imgPlayer = this.webSocketService.image;
@@ -29,6 +30,7 @@ export class LoadingPageComponent{
     let ws = this.webSocketService.getWebSocket();
     ws.subscribe("/user/queue/abandon",(frame) => {
       this.router.navigateByUrl('/connexion');
+      this.timer.stop();
     });
 
     if(!this.webSocketService.ready){

@@ -39,6 +39,7 @@ h1{
     text-align: left;  
 }
 
+
 #logo{
 
     position: absolute;
@@ -118,4 +119,19 @@ h1{
         opacity: 0;
     }
     }
-      
+    
+#opponentName{
+    font-family: 'test';
+    font-size: 2rem;
+    text-align : right;
+    position: absolute;
+    top : 150px;
+    right:120px;
+
+}
+    
+#opponentImage{
+    position: absolute;
+    top:200px;
+    right:90px;
+}

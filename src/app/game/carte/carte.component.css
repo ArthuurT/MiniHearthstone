@@ -39,12 +39,11 @@
 
 #lastline{
     font-size: 15px;
-    margin-top: 2%;
+    margin-top:-1%;
 }
 
 #vie{
-    margin-right: 65%;
-    color: rgba(78, 48, 9, 0.774);
+    color: rgb(196, 28, 28);
     font-family: 'test';
     font-size: 22px;;
     font-weight: bold;
@@ -52,8 +51,8 @@
 }
 
 #degats{
-
-    color: rgb(196, 28, 28);
+    margin-right: 65%;
+    color: rgba(78, 48, 9, 0.774);
     font-family: 'test';
     font-size: 22px;;
     font-weight: bold;

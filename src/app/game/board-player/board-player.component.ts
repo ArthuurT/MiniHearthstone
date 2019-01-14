@@ -74,7 +74,7 @@ export class BoardPlayerComponent{
 
   lancerAction(cible){
     let ws = this.webSocketService.getWebSocket();
-    ws.send("/app/lancerActionSpecial",{},JSON.stringify({'idCible' : cible}));
+    ws.send("/app/lancerActionSpeciale",{},JSON.stringify({'idCible' : cible}));
     console.log("action spéciale lancée :" + cible);
   }
 

@@ -24,17 +24,19 @@ export class TimerService {
         this._totalSecondes--;
         this._minutes = Math.floor(this._totalSecondes / 60);
         this._secondes = this._totalSecondes - this._minutes * 60;
-        console.log("tps" + this._totalSecondes);
       }else{
         this.ws.getWebSocket().send("/app/terminerTour",{},{});
+        clearInterval(this._timer);
       }
     },1000);
   }
 
   reset(){
+    clearInterval(this._timer);
     this._totalSecondes = 90;
     this._secondes = 30;
     this._minutes = 1;
+    this.start();
   }
 
   stop(){
