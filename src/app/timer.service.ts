@@ -8,9 +8,9 @@ import { resetComponentState } from '@angular/core/src/render3/instructions';
 })
 export class TimerService {
 
-  private _minutes : number = 1;
-  private _secondes : number = 30;
-  private _totalSecondes : number = 90;
+  private _minutes : number = 2;
+  private _secondes : number = 0;
+  private _totalSecondes : number = 120;
   private _timer;
 
   constructor(public ws : WebsocketService){}
@@ -33,9 +33,9 @@ export class TimerService {
 
   reset(){
     clearInterval(this._timer);
-    this._totalSecondes = 90;
-    this._secondes = 30;
-    this._minutes = 1;
+    this._totalSecondes = 120;
+    this._secondes = 0;
+    this._minutes = 2;
     this.start();
   }
 

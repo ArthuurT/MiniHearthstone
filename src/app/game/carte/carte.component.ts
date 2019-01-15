@@ -8,13 +8,17 @@ import { Carte } from 'src/app/interfaces/carte';
 })
 export class CarteComponent{
 
-  @Input() carte : Carte;
+  @Input() carte;
   @Input() playable : boolean;
+
 
   descopen = false;
 
+
+
   public setDesc(){
     this.descopen = !this.descopen;
+    console.log(this.carte.jouable)
   }
 
 }

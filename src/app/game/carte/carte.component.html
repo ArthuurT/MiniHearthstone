@@ -13,6 +13,7 @@
 
     <div id="lastline">
       <span id="degats">{{carte.degats}}</span>
+      <span *ngIf = "!playable" id="jouable">{{carte.jouable}}</span>
       <span id="vie">{{carte.pv}}</span>
     </div>
 </div>

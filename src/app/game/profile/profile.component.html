@@ -4,8 +4,11 @@ cdkDropList
 [cdkDropListConnectedTo]="['board-opponent','board-player','hand-player']"
 (cdkDropListDropped)="drop($event)">
 
-  <p *ngIf="!joueurProfil" else templateName>{{game.joueur.pseudo}} </p> 
-  <p *ngIf="joueurProfil" else templateName>{{game.adversaire.pseudo}} </p>
+  <p style="color:red" *ngIf="!joueurProfil && game.estJoueurCourant" else templateName>{{game.joueur.pseudo}} </p>
+  <p *ngIf="!joueurProfil && !game.estJoueurCourant" else templateName>{{game.joueur.pseudo}} </p>
+
+  <p style="color:red" *ngIf="joueurProfil && !game.estJoueurCourant" else templateName>{{game.adversaire.pseudo}} </p>
+  <p *ngIf="joueurProfil && game.estJoueurCourant" else templateName>{{game.adversaire.pseudo}} </p>
 
   <img *ngIf="!joueurProfil" id="id_img" src={{game.joueur.image}}>
   <img *ngIf="joueurProfil" id="id_img" src={{game.adversaire.image}}><br>

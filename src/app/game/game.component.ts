@@ -53,7 +53,7 @@ export class GameComponent{
     ws.subscribe("/user/queue/finPartie",(frame) => {
       this.timer.stop();
       let message = JSON.parse(frame.body);
-      let vainqueur = message.pseudo;
+      let vainqueur = message.pseudoVainqueur;
       console.log("Message reçu : " + message);
       if(vainqueur == this.joueur.pseudo){
         alert("Vous avez gagné !");

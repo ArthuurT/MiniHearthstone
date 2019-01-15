@@ -50,8 +50,16 @@
 
 }
 
+#jouable{
+    margin-right: 15%;
+    color: white;
+    font-family: 'test';
+    font-size: 14px;;
+    font-weight: bold; 
+}
+
 #degats{
-    margin-right: 65%;
+    margin-right: 15%;
     color: rgba(78, 48, 9, 0.774);
     font-family: 'test';
     font-size: 22px;;
