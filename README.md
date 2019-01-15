@@ -1,27 +1,33 @@
-# Hearthstone
+# SlightStone
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 
-## Development server
+# Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Simulation du jeu de cartes très connu Hearthstone 
 
-## Code scaffolding
+# Deploiement (local)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Le gestionnaire de packet npm est obligatoire pour lancer le client en local
 
-## Build
+```
+$ git clone https://github.com/ArthuurT/MiniHearthstone.git
+$ cd /MiniHearthstone
+$ npm install
+$ ng serve --open
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Mise en production (en ligne)
 
-## Running unit tests
+Non disponible pour le moment.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Mode d'emploi
 
-## Running end-to-end tests
+* Sur l'écran de connexion vous devez choisir votre pseudo, cliquer sur le héros que vous souhaitez jouer, puis presser le bouton "Jouer".
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Lors d'une partie, vous pouvez drag une carte de votre main et la drop sur **votre** plateau. Si celle-ci vous revient c'est que ce n'est pas à votre tour de jouer, que votre mana n'est pas suffisant pour jouer la carte souhaitée, ou qu'une cible est nécéssaire.
 
-## Further help
+* Si une cible est nécessaire, alors dropper la carte choisie **sur** la carte ciblée.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Vous pouvez cliquer sur le bouton "?" de chaque carte pour y connaitre sa description et donc savoir si une cible est nécessaire.
+

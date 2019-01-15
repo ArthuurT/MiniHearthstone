@@ -6,6 +6,7 @@ import { CarteSort } from '../interfaces/carte-sort';
 import { CarteComponent } from './carte/carte.component';
 import { WebsocketService } from '../websocket.service';
 import { TimerService } from '../timer.service';
+import { Router } from '@angular/router';
 
 
 declare var require: any;
@@ -21,7 +22,7 @@ export class GameComponent{
   @Input() adversaire : Adversaire;
   public estJoueurCourant : boolean;
 
-  constructor(private webSocketService : WebsocketService, private timer : TimerService) {
+  constructor(private webSocketService : WebsocketService, private timer : TimerService, private router : Router) {
 
     let etatPartie = this.webSocketService.getEtatPartie();
     etatPartie = JSON.stringify(etatPartie);
@@ -50,9 +51,16 @@ export class GameComponent{
       console.log("Message reçu : " + message);
     });
     ws.subscribe("/user/queue/finPartie",(frame) => {
+      this.timer.stop();
       let message = JSON.parse(frame.body);
       let vainqueur = message.pseudo;
       console.log("Message reçu : " + message);
+      if(vainqueur == this.joueur.pseudo){
+        alert("Vous avez gagné !");
+      }else{
+        alert("Vous avez perdu !");
+      }
+      this.router.navigateByUrl('/connexion');
     });
   }
 
